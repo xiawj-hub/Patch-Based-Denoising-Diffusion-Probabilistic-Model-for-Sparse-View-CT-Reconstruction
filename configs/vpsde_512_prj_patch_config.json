@@ -1,0 +1,138 @@
+{
+    "in_ch": {
+        "type": "int",
+        "help": "Number of input channels",
+        "default": 1},
+    "out_ch": {
+        "type": "int",
+        "help": "Number of output channels",
+        "default": 1},
+    "gp_norm": {
+        "type": "int",
+        "help": "Parameter for group norm",
+        "default": 32},
+    "inner_ch": {
+        "type": "int",
+        "help": "Number of inner channels",
+        "default": 64},
+    "ch_mul": {
+        "type": "int",
+        "help": "List of channel multipliers",
+        "nargs": "+",
+        "default": [1, 2, 4, 8, 8]},
+    "attn_res": {
+        "type": "int",
+        "help": "Attention resolution",
+        "nargs": "+",
+        "default": []},
+    "res_blocks": {
+        "type": "int",
+        "help": "Number of ResNet blocks",
+        "default": 2},
+    "dropout": {
+        "type": "float",
+        "help": "Dropout",
+        "default": 0.0},
+    "image_size": {
+        "type": "int",
+        "help": "Image size",
+        "default": 64},    
+    
+
+    "num_scales": {
+        "type": "int",
+        "help": "Number of steps",
+        "default": 1000},
+    "beta_min": {
+        "type": "float",
+        "help": "beta_1",
+        "default": 0.1},
+    "beta_max": {
+        "type": "float",
+        "help": "beta_T",
+        "default": 20},
+    "sde": {
+        "type": "str",
+        "help": "SDE type",
+        "default": "vpsde"},
+    "ema_decay": {
+        "type": "float",
+        "help": "Decay of EMA",
+        "default": 0.999},
+    "snr": {
+        "type": "float",
+        "help": "snr",
+        "default": 0.16},
+    "predictor": {
+        "type": "str",
+        "help": "Predictor type",
+        "default": "euler"},
+    "corrector": {
+        "type": "str",
+        "help": "Corrector type",
+        "default": "langevin"},
+    "coeff": {
+        "type": "float",
+        "help": "coeff",
+        "default": 1.0},
+
+
+    "ngpus": {
+        "type": "int",
+        "help": "Number of GPUs",
+        "default": 1},
+    "ncpus": {
+        "type": "int",
+        "help": "Number of dataloader workers",
+        "default": 4},
+    "n_iter": {
+        "type": "int",
+        "help": "Number of training iterations",
+        "default": 500000},
+    "save_checkpoint_freq": {
+        "type": "int",
+        "help": "Frequency to save checkpoint",
+        "default": 10000},
+    "val_freq": {
+        "type": "int",
+        "help": "Frequency to validate",
+        "default": 10000},
+    "lr": {
+        "type": "float",
+        "help": "Learning rate",
+        "default": 1e-5}, 
+    "batch_size": {
+        "type": "int",
+        "help": "Batch size",
+        "default": 2}, 
+    "grad_clip": {
+        "type": "float",
+        "help": "Grad clip norm",
+        "default": 1.0}, 
+    "dataroot": {
+        "type": "str",
+        "help": "Root path of dataset",
+        "default": "/scratch/xiaw4/dataset/mayo/simPrj/3mm"},
+    "logdir": {
+        "type": "str",
+        "help": "Path of logs",
+        "default": "./logs/vpsde_512_prj_patch"},      
+    "checkpointdir": {
+        "type": "str",
+        "help": "Path of checkpoints",
+        "default": "./checkpoints/vpsde_512_prj_patch"},
+    "model_id": {
+        "type": "int",
+        "help": "Idx of sampling model",
+        "default": -1},
+    "DPM_NFE":{
+        "type": "int",
+        "help": "NFE of DPM Solver",
+        "default": 50
+    },
+    "DPM_eps":{
+        "type": "float",
+        "help": "Tolerance of DPM Solver",
+        "default": 1e-4
+    }
+}
